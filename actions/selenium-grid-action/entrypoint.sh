@@ -11,7 +11,6 @@ apt install npm -y
 
 gem install watir
 
-docker node inspect self --format '{{ .Status.Addr  }}'
 
 echo "Starting swarm..."
 
@@ -19,6 +18,7 @@ cd $GITHUB_WORKSPACE/
 
 docker swarm init
 docker stack deploy -c docker-compose.yml grid
+docker node inspect self --format '{{ .Status.Addr  }}'
 
 cd tests/
 
