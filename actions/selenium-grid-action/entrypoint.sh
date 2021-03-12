@@ -18,7 +18,7 @@ cd $GITHUB_WORKSPACE/
 docker swarm init
 docker stack deploy -c docker-compose.yml grid
 docker node inspect self --format '{{ .Status.Addr  }}'
-ifconfig |grep inet
+ip addr show
 
 
 cd tests/
