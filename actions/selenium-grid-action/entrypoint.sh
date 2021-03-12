@@ -9,6 +9,10 @@ docker --version
 apt install nodejs -y
 apt install npm -y
 
+gem install watir
+
+docker node inspect self --format '{{ .Status.Addr  }}'
+
 echo "Starting swarm..."
 
 cd $GITHUB_WORKSPACE/
