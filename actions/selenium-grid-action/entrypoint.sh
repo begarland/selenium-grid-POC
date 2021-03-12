@@ -1,5 +1,11 @@
 #!/bin/sh -l
 
+echo "downloading things"
+
+apt-get update
+apt-get install -y node docker
+
+
 echo "Starting swarm..."
 
 cd $GITHUB_WORKSPACE/
