@@ -19,7 +19,7 @@ docker swarm init
 docker stack deploy -c docker-compose.yml grid
 docker node inspect self --format '{{ .Status.Addr  }}'
 ip addr show
-
+hostname -I
 
 cd tests/
 
