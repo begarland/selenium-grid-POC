@@ -6,8 +6,8 @@ apt-get update
 apt install docker.io -y
 docker --version
 
-apt install nodejs
-apt install npm
+apt install nodejs -y
+apt install npm -y
 
 echo "Starting swarm..."
 
