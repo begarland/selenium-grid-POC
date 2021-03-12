@@ -9,7 +9,7 @@ docker --version
 # apt install nodejs -y
 # apt install npm -y
 
-gem install watir
+gem install watir webdrivers faker
 
 echo "Starting swarm..."
 
