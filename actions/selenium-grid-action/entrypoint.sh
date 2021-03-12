@@ -23,7 +23,7 @@ docker stack deploy -c docker-compose.yml grid
 
 # curl http://10.1.0.4:4444/wd/hub
 # curl http://172.17.0.2:4444/wd/hub
-cur http://hub:4444/wd/hub
+curl http://hub:4444/wd/hub
 
 cd tests/
 
