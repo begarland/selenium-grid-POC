@@ -3,7 +3,7 @@ const webdriver = require("selenium-webdriver");
 function findGoogle(browser = "chrome") {
   const driver = new webdriver.Builder() //Creating a driver
     .forBrowser(browser)
-    .usingServer("http://172.17.0.2:4444/wd/hub") //Register the hub
+    .usingServer("hub:4444/wd/hub") //Register the hub
     .build();
 
   driver
