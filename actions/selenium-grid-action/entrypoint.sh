@@ -6,8 +6,8 @@ apt-get update
 apt install docker.io -y
 docker --version
 
-apt install nodejs -y
-apt install npm -y
+# apt install nodejs -y
+# apt install npm -y
 
 gem install watir
 
@@ -23,10 +23,12 @@ hostname -I
 
 cd tests/
 
+# npm install
+
 echo "Starting tests..."
 
-npm install
-node webdriver-example.js
+
+# node webdriver-example.js
 ruby watir-example.rb
 
 echo "Leaving swarm..."
