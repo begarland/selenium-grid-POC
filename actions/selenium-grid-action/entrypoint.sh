@@ -3,9 +3,7 @@
 echo "downloading things"
 
 apt-get update
-apt install docker.io
-systemctl start docker
-systemctl enable docker
+apt install docker.io -y
 docker --version
 
 echo "Starting swarm..."
