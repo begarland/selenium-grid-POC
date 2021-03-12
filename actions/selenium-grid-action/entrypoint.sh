@@ -20,6 +20,7 @@ cd tests/
 
 echo "Starting tests..."
 
+npm install
 node webdriver-example.js
 ruby watir-example.rb
 
