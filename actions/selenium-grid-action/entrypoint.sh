@@ -12,7 +12,7 @@ apt-get install \
 
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu eoan stable"
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 
 
 apt-get update
