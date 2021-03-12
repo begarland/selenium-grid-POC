@@ -6,8 +6,8 @@ apt-get update
 apt install docker.io -y
 docker --version
 
-# apt install nodejs -y
-# apt install npm -y
+apt install nodejs -y
+apt install npm -y
 
 gem install watir webdrivers faker
 
@@ -23,16 +23,16 @@ docker stack deploy -c docker-compose.yml grid
 
 # curl http://10.1.0.4:4444/wd/hub
 # curl http://172.17.0.2:4444/wd/hub
-curl http://hub:4444/wd/hub
+# curl http://hub:4444/wd/hub
 
 cd tests/
 
-# npm install
+npm install
 
 echo "Starting tests..."
 
 
-# node webdriver-example.js
+node webdriver-example.js
 ruby watir-example.rb
 
 echo "Leaving swarm..."
