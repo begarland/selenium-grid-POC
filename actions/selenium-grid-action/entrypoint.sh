@@ -17,11 +17,11 @@ cd $GITHUB_WORKSPACE/
 
 docker swarm init
 docker stack deploy -c docker-compose.yml grid
-docker node inspect self --format '{{ .Status.Addr  }}'
-ip addr show
-hostname -I
 
 cd tests/
+
+curl http://172.17.0.2:4444/wd/hub/status
+# curl http://10.0.0.1:4444/wd/hub/status
 
 # npm install
 
