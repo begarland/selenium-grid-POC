@@ -6,6 +6,9 @@ apt-get update
 apt install docker.io -y
 docker --version
 
+apt install nodejs
+apt install npm
+
 echo "Starting swarm..."
 
 cd $GITHUB_WORKSPACE/
