@@ -21,8 +21,8 @@ docker node inspect self --format '{{ .Status.Addr  }}'
 ip addr show
 hostname -I
 
-curl 10.1.0.4:4444/wd/hub
-curl 172.17.0.2:4444/wd/hub
+curl http://10.1.0.4:4444/wd/hub
+curl http://172.17.0.2:4444/wd/hub
 
 cd tests/
 
