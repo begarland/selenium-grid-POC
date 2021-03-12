@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:bionic
 FROM ruby:2.6.6
 
 ADD entrypoint.sh /entrypoint.sh
