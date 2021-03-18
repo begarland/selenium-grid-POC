@@ -2,13 +2,13 @@
 require_relative 'spec_helper'
 require_relative '../pages/login'
 
-describe 'Login' do
+describe 'Login', :shallow do
 
   before(:each) do
     @login = Login.new(@driver)
   end
 
-  it 'succeeded' do
+  it 'succeeded', :shallow do
     @login.with('tomsmith', 'SuperSecretPassword!') 
     expect(@login.success_message_present?).to be_truthy
   end

@@ -12,7 +12,8 @@ module Config
             browser_version: ENV['BROWSER_VERSION'] || '11',
             platform_name: ENV['PLATFORM_NAME'] || 'Windows 10',
             sauce_username: ENV['SAUCE_USERNAME'],
-            sauce_access_key: ENV['SAUCE_ACCESS_KEY']
+            sauce_access_key: ENV['SAUCE_ACCESS_KEY'],
+            timeout: ENV['TIMEOUT']
         } 
     end
 end
