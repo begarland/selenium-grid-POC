@@ -19,7 +19,7 @@ class Login < BasePage
   
   def initialize(driver)
     super
-    visit 'http://the-internet.herokuapp.com/login'
+    visit '/login'
     raise 'Login page not ready' unless
         is_displayed?(LOGIN_FORM)
   end

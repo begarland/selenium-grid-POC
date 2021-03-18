@@ -1,14 +1,19 @@
 # filename: pages/base_page.rb
-require 'selenium-webdriver'
+require_relative '../spec/config'
 
 class BasePage
+    include Config
 
     def initialize(driver) 
         @driver = driver
     end
 
     def visit(url) 
+      if url.start_with? 'http'
         @driver.get url
+      else 
+        @driver.get config[:base_url] + url
+      end
     end
 
     def find(locator) 
@@ -30,7 +35,6 @@ class BasePage
         false
       end
     end
-
 
     def wait_for(seconds = 15) 
         Selenium::WebDriver::Wait.new(timeout: seconds).until { yield }

@@ -8,7 +8,7 @@ class DynamicLoading < BasePage
   FINISH_TEXT = { id: 'finish' }
   
   def load(example_number)
-    visit 'http://the-internet.herokuapp.com/dynamic_loading/' + example_number 
+    visit "/dynamic_loading/#{example_number}"
     click START_BUTTON
   end
   
