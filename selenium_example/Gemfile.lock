@@ -39,6 +39,9 @@ GEM
     minitest (5.14.4)
     nokogiri (1.11.2-x86_64-darwin)
       racc (~> 1.4)
+    parallel (1.20.1)
+    parallel_tests (2.29.2)
+      parallel
     racc (1.5.2)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -86,6 +89,7 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv-rails
+  parallel_tests (~> 2.29.1)
   rspec (~> 3.8.0)
   selenium-webdriver (~> 4.0.0.alpha.2)
 
