@@ -2,7 +2,7 @@
 module Config 
     def config
             {
-                base_url: ENV['BASE_URL] || ''http://the-internet.herokuapp.com',
+                base_url: ENV['BASE_URL'] || 'http://the-internet.herokuapp.com',
                 host: ENV['HOST'] || 'saucelabs',
                 browser_name: ENV['BROWSER_NAME'] || 'internet_explorer',
                 browser_version:   ENV['BROWSER_VERSION'] || '11',

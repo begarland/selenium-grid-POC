@@ -1,25 +1,35 @@
 # filename: spec/login_spec.rb
 require 'selenium-webdriver'
-  describe 'Login' do
+require_relative '../pages/login'
+
+describe 'Login' do
 
     before(:each) do
-    #   driver_path = File.join(Dir.pwd, 'vendor', 'geckodriver') 
-    #   puts driver_path
-    #   puts File.file? driver_path
-    #   if File.file? driver_path
-        # service = Selenium::WebDriver::Service.chrome(path: driver_path)
-        # @driver = Selenium::WebDriver.for :firefox, service: service 
-    #   else
+      driver_path = File.join(Dir.pwd, 'vendor', 'chromedriver') 
+      if File.file? driver_path
+        service = Selenium::WebDriver::Service.chrome(path: driver_path)
+        @driver = Selenium::WebDriver.for :chrome, service: service 
+      else
         @driver = Selenium::WebDriver.for :chrome
-    #   end
+      end
+
+      @login = Login.new(@driver)
     end
     after(:each) do 
       @driver.quit
     end
-    it 'succeeded' do
-      @driver.get 'http://the-internet.herokuapp.com/login' 
-      @driver.find_element(id: 'username').send_keys('tomsmith') 
-      @driver.find_element(id: 'password').send_keys('SuperSecretPassword!') 
-      @driver.find_element(css: 'button').submit
-    end
+    
+
+  it 'succeeded' do
+    @login.with('tomsmith', 'SuperSecretPassword!') 
+    expect(@login.success_message_present?).to be_truthy
+  end
+
+
+  it 'failed' do
+    @login.with('asdf', 'asdf') 
+    expect(@login.failure_message_present?).to be_truthy
+  end
+  
+  
 end
