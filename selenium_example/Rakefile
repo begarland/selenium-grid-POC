@@ -1,8 +1,5 @@
 # filename: Rakefile
 
-# require 'dotenv'
-# Dotenv.load('.env')
-
 def launch_in_parallel
   tags = ENV['TAG'] 
   processes = ENV['PROCESSES'] 
@@ -21,9 +18,10 @@ task :local, :browser_name do |task, args|
 end
 
 desc 'Run tests on Sauce Labs'  
-task :sauce, :browser_name, :browser_version, :platform_name do |t, args|
+task :sauce, :browser_name, :browser_version, :platform_name, :timeout do |t, args|
   ENV['BROWSER_NAME']  = args[:browser_name]
   ENV['BROWSER_VERSION'] = args[:browser_version]
   ENV['PLATFORM_NAME'] = args[:platform_name]
+  ENV['TIMEOUT'] = args[:timeout]
   launch_in_parallel
 end
