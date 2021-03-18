@@ -1,5 +1,4 @@
 # filename: spec/login_spec.rb
-require 'selenium-webdriver'
 require_relative '../pages/login'
 
 describe 'Login' do
@@ -29,6 +28,7 @@ describe 'Login' do
   it 'failed' do
     @login.with('asdf', 'asdf') 
     expect(@login.failure_message_present?).to be_truthy
+    expect(@login.success_message_present?).to be_falsey
   end
   
   

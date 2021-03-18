@@ -1,5 +1,7 @@
 # filename: pages/login.rb
-class Login
+require_relative 'base_page'
+
+class Login < BasePage
 
   LOGIN_FORM = {id: 'login'}
   USERNAME_INPUT  = { id: 'username' }
@@ -15,18 +17,25 @@ class Login
         @driver.find_element(LOGIN_FORM).displayed?
   end
   
+  def initialize(driver)
+    super
+    visit 'http://the-internet.herokuapp.com/login'
+    raise 'Login page not ready' unless
+        is_displayed?(LOGIN_FORM)
+  end
+
   def with(username, password) 
-    @driver.find_element(USERNAME_INPUT).send_keys(username) 
-    @driver.find_element(PASSWORD_INPUT).send_keys(password) 
-    @driver.find_element(SUBMIT_BUTTON).click
+    type username, USERNAME_INPUT
+    type password, PASSWORD_INPUT
+    click SUBMIT_BUTTON
   end
 
-  def success_message_present? 
-    @driver.find_element(SUCCESS_MESSAGE).displayed?
-  end
-
-  def failure_message_present?
-    @driver.find_element(FAILURE_MESSAGE).displayed?
+  def success_message_present?
+    is_displayed? SUCCESS_MESSAGE
   end
   
+  def failure_message_present?
+    is_displayed? FAILURE_MESSAGE  
+  end
+
 end
