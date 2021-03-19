@@ -9,13 +9,6 @@ class Login < BasePage
   SUBMIT_BUTTON   = { css: 'button'  }
   SUCCESS_MESSAGE = { css: '.flash.success' }
   FAILURE_MESSAGE = { css: '.flash.error' }
-
-  def initialize(driver)
-    @driver = driver
-    @driver.get 'http://the-internet.herokuapp.com/login'
-    raise 'Login page not ready' unless
-        @driver.find_element(LOGIN_FORM).displayed?
-  end
   
   def initialize(driver)
     super

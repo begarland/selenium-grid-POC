@@ -1,6 +1,7 @@
 # filename: spec/spec_helper.rb
 
 require 'selenium-webdriver'
+require 'rspec'
 require_relative 'config'
 
 
@@ -48,7 +49,7 @@ RSpec.configure do |c|
         @driver.execute_script("sauce:job-name=#{example.full_description}") 
         @driver.execute_script("sauce:job-result=#{test_passed}")
       if !test_passed
-        puts "Watch a video of the test at https://saucelabs.com/tests/#{@driver. session_id}"
+        puts "Watch a video of the test at https://saucelabs.com/tests/#{@driver.session_id}"
       end 
     end
     ensure
