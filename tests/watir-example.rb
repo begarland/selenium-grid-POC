@@ -11,7 +11,7 @@ module Driver
       Watir.default_timeout = 90
 
 
-      @driver = Watir::Browser.new browser.to_sym,
+      @driver = Watir::Browser.new :remote,
                                    url: 'http://localhost:4444/wd/hub',
                                    options: { args: args },
                                    headless: false
