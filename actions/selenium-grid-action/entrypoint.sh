@@ -25,7 +25,10 @@ docker stack deploy -c docker-compose.yml grid
 # curl http://172.17.0.2:4444/wd/hub
 # curl http://hub:4444/wd/hub
 
-echo cat /etc/hosts
+
+CHANNELS=$(cat "/etc/hosts")
+
+echo CHANNELS 
 
 cd tests/
 
