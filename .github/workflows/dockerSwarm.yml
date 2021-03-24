@@ -26,9 +26,12 @@ jobs:
       - name: install depenedencies
         run: |
           echo $(bash installDependencies.sh)
+      - name: wait for hub
+        run: |
+          echo $(bash waitForSeleniumGrid.sh)
       - name: run watir test
         run: |
           echo $(ruby $GITHUB_WORKSPACE/tests/watir\-example.rb)
-      - name: run webdriver test
-        run: |
-          echo $(node $GITHUB_WORKSPACE/tests/webdriver\-example.js)
+      # - name: run webdriver test
+      #   run: |
+      #     echo $(node $GITHUB_WORKSPACE/tests/webdriver\-example.js)
