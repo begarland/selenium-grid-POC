@@ -118,3 +118,7 @@ From the docker-selenium docs:
 - To deploy the Grid, `docker stack deploy -c docker-compose.yml grid`
 - Stop with `docker stack rm grid`
 - Stop swarm mode `docker swarm leave --force`
+
+---
+
+todo: add link
