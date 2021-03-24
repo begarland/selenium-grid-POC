@@ -33,10 +33,13 @@ vim -E -s /etc/hosts << EOF
 :quit
 EOF
 
+docker ps -a
+
 cd tests/
 
-npm install
 
+
+npm install
 
 set -e
 
