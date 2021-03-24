@@ -14,7 +14,7 @@ module Driver
       @driver = Watir::Browser.new browser.to_sym,
                                    url: 'http://localhost:4444/wd/hub',
                                    options: { args: args },
-                                   headless: true
+                                   headless: false
     end
 
     def self.get
