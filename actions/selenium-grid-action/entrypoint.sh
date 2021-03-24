@@ -8,6 +8,7 @@ docker --version
 
 apt install nodejs -y
 apt install npm -y
+apt install vim -y
 
 gem install watir webdrivers faker
 
@@ -34,6 +35,7 @@ vim -E -s /etc/hosts << EOF
 :update
 :quit
 EOF
+
 cd tests/
 
 npm install
