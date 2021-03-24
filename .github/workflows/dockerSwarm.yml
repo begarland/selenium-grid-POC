@@ -23,7 +23,7 @@ jobs:
           - "4444:4444"
     steps:
       - uses: actions/checkout@v2
-      - name: install depenedencies
+      - name: install dependencies
         run: |
           echo $(bash installDependencies.sh)
       - name: wait for hub
