@@ -3,8 +3,8 @@
 echo "downloading things"
 
 apt-get update
-# apt install docker.io -y
-apt-get install docker-ce=20.10.5~3-0~ubuntu-focal_amd64 docker-ce-cli=20.10.5~3-0~ubuntu-focal_amd64 containerd.io
+apt install docker.io -y
+# apt-get install docker-ce=docker-ce_20.10.5~3-0~ubuntu-focal_amd64 docker-ce-cli=_20.10.5~3-0~ubuntu-focal_amd64 containerd.io
 docker --version
 
 apt install nodejs -y
@@ -16,6 +16,8 @@ apt install vim -y
 gem install watir webdrivers faker
 
 echo "Starting swarm..."
+
+echo $(cat /etc/os-release)
 
 cd $GITHUB_WORKSPACE/
 
