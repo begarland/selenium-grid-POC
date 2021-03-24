@@ -9,6 +9,8 @@ docker --version
 apt install nodejs -y
 apt install npm -y
 apt install vim -y
+apt install curl -y
+
 
 gem install watir webdrivers faker
 
@@ -21,6 +23,10 @@ cd $GITHUB_WORKSPACE/
 # docker node inspect self --format '{{ .Status.Addr  }}'
 # ip addr show
 # hostname -I
+
+curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+chmod +x /usr/local/bin/docker-compose
 
 
 docker-compose -f docker-compose.yml up -d
