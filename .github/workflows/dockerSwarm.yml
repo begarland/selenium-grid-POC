@@ -19,7 +19,7 @@ jobs:
           - "4444:4444"
     steps:
       - uses: actions/checkout@v2
-       - name: install gems
+      - name: install gems
         run: |
           echo $(bash installGems.sh)
       - name: run test
