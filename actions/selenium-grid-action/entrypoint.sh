@@ -36,6 +36,8 @@ vim -E -s /etc/hosts << EOF
 :quit
 EOF
 
+echo $(cat /etc/hosts)
+
 docker ps -a
 
 cd tests/
