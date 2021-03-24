@@ -8,6 +8,8 @@ require 'faker'
 module Driver
     def self.create(browser)
       args = ['--ignore-certificate-errors', '--no-sandbox', '--disable-dev-shm-usage']
+      Watir.default_timeout = 90
+
 
       @driver = Watir::Browser.new browser.to_sym,
                                    url: 'http://localhost:4444/wd/hub',
@@ -45,4 +47,4 @@ def findAddressBook(browser_choice)
 end
 
 findAddressBook 'chrome'
-findAddressBook 'firefox'
+# findAddressBook 'firefox'
