@@ -3,11 +3,13 @@ on:
   pull_request:
   workflow_dispatch:
 jobs:
-  swarm:
-    name: Run docker swarm
+  runner-job:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: ./actions/selenium-grid-action
-    ports:
-      - 4444:4444
+    services:
+      swarm:
+        name: Run docker swarm
+        steps:
+          - uses: actions/checkout@v2
+          - uses: ./actions/selenium-grid-action
+        ports:
+          - 4444:4444
