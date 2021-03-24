@@ -16,11 +16,14 @@ echo "Starting swarm..."
 
 cd $GITHUB_WORKSPACE/
 
-docker swarm init
-docker stack deploy -c docker-compose.yml grid
+# docker swarm init
+# docker stack deploy -c docker-compose.yml grid
 # docker node inspect self --format '{{ .Status.Addr  }}'
 # ip addr show
 # hostname -I
+
+
+docker-compose -f docker-compose.yml up -d
 
 # curl http://10.1.0.4:4444/wd/hub
 # curl http://172.17.0.2:4444/wd/hub
@@ -48,5 +51,7 @@ ruby watir-example.rb
 
 echo "Leaving swarm..."
 
-docker stack rm grid
-docker swarm leave --force
+# docker stack rm grid
+# docker swarm leave --force
+
+docker-compose -f docker-compose.yml down
