@@ -21,8 +21,10 @@ echo $(cat /etc/os-release)
 
 cd $GITHUB_WORKSPACE/
 
+# docker start
+
 docker swarm init
-docker stack deploy -c docker-compose.yml grid --hostname selgrid
+docker stack deploy -c docker-compose.yml grid --name selgrid
 docker node inspect self --format '{{ .Status.Addr  }}'
 ip addr show
 hostname -I
