@@ -78,4 +78,4 @@ services:
 
 networks:
   selenium_network:
-    driver: bridge
+    external: true
