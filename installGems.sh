@@ -2,4 +2,4 @@
 
 cd $GITHUB_WORKSPACE/tests/
 
-gem install watir webdrivers faker
+gem install watir webdrivers faker --user-install
