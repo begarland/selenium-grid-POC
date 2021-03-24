@@ -9,8 +9,8 @@ sudo apt-get update
 sudo apt-get install ruby-full
 
 echo "installing node and npm"
-apt install nodejs -y
-apt install npm -y
+sudo apt install nodejs -y
+sudo apt install npm -y
 
 
 cd $GITHUB_WORKSPACE/tests/
