@@ -19,12 +19,15 @@ jobs:
           - "4444:4444"
     steps:
       - uses: actions/checkout@v2
-      - name: install gems
+      - name: install depenedencies
         run: |
-          echo $(bash installGems.sh)
-      - name: run test
+          echo $(bash installDependencies.sh)
+      - name: run watir test
         run: |
           echo $(ruby $GITHUB_WORKSPACE/tests/watir\-example.rb)
+      - name: run webdriver test
+        run: |
+          echo $(node $GITHUB_WORKSPACE/tests/webdriver\-example.rb)
   # edge:
   #   image: selenium/node-edge:4.0.0-beta-1-20210215
   #   volumes:
