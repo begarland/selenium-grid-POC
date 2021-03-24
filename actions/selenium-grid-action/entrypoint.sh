@@ -3,7 +3,7 @@
 echo "downloading things"
 
 apt-get update
-apt install docker.io -y
+apt install docker.io=20.10.5 -y
 docker --version
 
 apt install nodejs -y
