@@ -28,7 +28,7 @@ docker stack deploy -c docker-compose.yml grid
 
 CHANNELS=$(cat "/etc/hosts")
 
-echo CHANNELS 
+echo $CHANNELS 
 
 cd tests/
 
