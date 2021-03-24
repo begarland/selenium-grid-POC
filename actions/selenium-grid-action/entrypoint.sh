@@ -26,9 +26,17 @@ docker stack deploy -c docker-compose.yml grid
 # curl http://hub:4444/wd/hub
 
 
-CHANNELS=$(cat "/etc/hosts")
+file="/etc/hosts"
 
-echo $CHANNELS 
+echo $file 
+
+
+ex $file <<EOEX
+  :i
+  127.0.0.1 kubernetes.docker.internal
+  .
+  :x
+EOEX
 
 cd tests/
 
