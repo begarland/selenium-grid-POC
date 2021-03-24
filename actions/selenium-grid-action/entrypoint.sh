@@ -26,18 +26,14 @@ docker stack deploy -c docker-compose.yml grid
 # curl http://hub:4444/wd/hub
 
 
-file="/etc/hosts"
-
-echo $file 
-
-
-ex $file <<EOEX
-  :i
-  127.0.0.1 kubernetes.docker.internal
-  .
-  :x
-EOEX
-
+vim -E -s /etc/hosts << EOF
+:%s127.0.0.1	localhost
+:%s255.255.255.255	broadcasthost
+:%s::1             localhost
+:%s127.0.0.1 kubernetes.docker.internal
+:update
+:quit
+EOF
 cd tests/
 
 npm install
