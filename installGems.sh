@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash -l
 
 apt-get update
 apt-get install ruby2.6 -y
