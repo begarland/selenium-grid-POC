@@ -24,7 +24,7 @@ cd $GITHUB_WORKSPACE/
 # docker start
 
 docker swarm init
-docker stack deploy -c docker-compose.yml grid --name selgrid
+docker stack deploy -c docker-compose.yml grid --name selgrid --publish 
 docker node inspect self --format '{{ .Status.Addr  }}'
 ip addr show
 hostname -I
