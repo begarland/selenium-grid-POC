@@ -19,6 +19,6 @@ function findGoogle(browser = "chrome") {
     }); //Quit the driver
 }
 
-findGoogle("firefox");
+// findGoogle("firefox");
 findGoogle("chrome");
 // findGoogle("edge");

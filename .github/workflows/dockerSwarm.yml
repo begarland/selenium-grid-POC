@@ -7,7 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     services:
       chrome:
-        image: selenium/node-chrome:4.0.0-beta-1-20210215
+        image: selenium/node-chrome:4.0.0-beta-3-prerelease-20210321
+        volumes:
+          - /dev/shm:/dev/shm
+      firefox:
+        image: selenium/node-firefox:4.0.0-beta-3-prerelease-20210321
         volumes:
           - /dev/shm:/dev/shm
 
@@ -28,53 +32,3 @@ jobs:
       - name: run webdriver test
         run: |
           echo $(node $GITHUB_WORKSPACE/tests/webdriver\-example.js)
-  # edge:
-  #   image: selenium/node-edge:4.0.0-beta-1-20210215
-  #   volumes:
-  #     - /dev/shm:/dev/shm
-  #   environment:
-  #     - SE_EVENT_BUS_HOST=selenium-hub
-  #     - SE_EVENT_BUS_PUBLISH_PORT=4442
-  #     - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-  #   deploy:
-  #     replicas: 1
-  #   entrypoint: bash -c 'SE_OPTS="--host $$HOSTNAME" /opt/bin/entry_point.sh'
-
-  # firefox:
-  #   image: selenium/node-firefox:4.0.0-beta-1-20210215
-  #   volumes:
-  #     - /dev/shm:/dev/shm
-  #   environment:
-  #     - SE_EVENT_BUS_HOST=selenium-hub
-  #     - SE_EVENT_BUS_PUBLISH_PORT=4442
-  #     - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-  #     - HUB_HOST=selenium-hub
-  #   depends_on:
-  #     - selenium-hub
-  #   links:
-  #     - selenium-hub:hub
-  #   networks:
-  #     - selenium_network
-  #   deploy:
-  #     replicas: 1
-  #   entrypoint: bash -c 'SE_OPTS="--host $$HOSTNAME" /opt/bin/entry_point.sh'
-
-  # opera:
-  #   image: selenium/node-opera:4.0.0-beta-1-20210215
-  #   volumes:
-  #     - /dev/shm:/dev/shm
-  #   environment:
-  #     - SE_EVENT_BUS_HOST=selenium-hub
-  #     - SE_EVENT_BUS_PUBLISH_PORT=4442
-  #     - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-  #   deploy:
-  #     replicas: 1
-  #   entrypoint: bash -c 'SE_OPTS="--host $$HOSTNAME" /opt/bin/entry_point.sh'
-
-  # swarm:
-  #   name: Run docker swarm
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: ./actions/selenium-grid-action
-  #   ports:
-  #     - 4444:4444
