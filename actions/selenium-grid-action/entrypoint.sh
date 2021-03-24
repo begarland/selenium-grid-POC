@@ -20,21 +20,9 @@ cd $GITHUB_WORKSPACE/
 
 docker swarm init
 docker stack deploy -c docker-compose.yml grid
-# docker node inspect self --format '{{ .Status.Addr  }}'
-# ip addr show
-# hostname -I
-
-
-# curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-# chmod +x /usr/local/bin/docker-compose
-
-# 
-# docker-compose -f docker-compose.yml up -d
-
-# curl http://10.1.0.4:4444/wd/hub
-# curl http://172.17.0.2:4444/wd/hub
-# curl http://hub:4444/wd/hub
-
+docker node inspect self --format '{{ .Status.Addr  }}'
+ip addr show
+hostname -I
 
 vim -E -s /etc/hosts << EOF
 :%s127.0.0.1	localhost
