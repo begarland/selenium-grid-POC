@@ -10,7 +10,7 @@ module Driver
       args = ['--ignore-certificate-errors', '--no-sandbox', '--disable-dev-shm-usage']
 
       @driver = Watir::Browser.new browser.to_sym,
-                                   url: 'http://172.17.0.1:4444/wd/hub',
+                                   url: 'http://0.0.0.0:4444/wd/hub',
                                    options: { args: args },
                                    headless: false
     end
