@@ -19,6 +19,9 @@ jobs:
           - "4444:4444"
     steps:
       - uses: actions/checkout@v2
+       - name: install gems
+        run: |
+          echo $(bash installGems.sh)
       - name: run test
         run: |
           echo $(ruby $GITHUB_WORKSPACE/tests/watir\-example.rb)
