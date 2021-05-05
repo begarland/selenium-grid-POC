@@ -19,7 +19,7 @@ jobs:
         run: | 
           cd $GITHUB_WORKSPACE/tests/
           gem install watir
-          gem install webrivers
+          gem install webdrivers
           gem install faker
           ruby watir\-example.rb
       - uses: actions/setup-node@v2
