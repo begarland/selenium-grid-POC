@@ -8,9 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-java@v2
-          with:
-            distribution: 'adopt' # See 'Supported distributions' for available options
-            java-version: '11'
+        with:
+          distribution: 'adopt' # See 'Supported distributions' for available options
+          java-version: '11'
       - name: start up hub
         run: |
           cd $GITHUB_WORKSPACE/tests/scripts/
@@ -30,4 +30,3 @@ jobs:
         run: | 
           cd $GITHUB_WORKSPACE/tests/
           node webdriver\-example.js
-          
