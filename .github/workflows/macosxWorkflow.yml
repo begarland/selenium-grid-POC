@@ -1,0 +1,33 @@
+name: MacOSx workflow
+on: 
+  pull_request:
+  workflow_dispatch:
+jobs: 
+  run-job:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+          with:
+            distribution: 'adopt' # See 'Supported distributions' for available options
+            java-version: '11'
+      - name: start up hub
+        run: |
+          cd $GITHUB_WORKSPACE/tests/scripts/
+          java -jar selenium-server-standalone.jar -role hub -hubConfig hub.json
+          java -jar -Dwebdriver.gecko.driver=./drivers/geckodriver -Dwebdriver.chrome.driver=./drivers/chromedriver selenium-server-standalone.jar -role node -nodeConfig node.json
+      - name: run watir scripts
+        run: | 
+          cd $GITHUB_WORKSPACE/tests/
+          gem install watir
+          gem install webrivers
+          gem install faker
+          ruby watir\-example.rb
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: run node scripts
+        run: | 
+          cd $GITHUB_WORKSPACE/tests/
+          node webdriver\-example.js
+          
