@@ -43,6 +43,6 @@ def findAddressBook(browser_choice)
     puts browser_choice.to_s + ' is done!'
     browser.close
 end
-
+findAddressBook 'safari'
 findAddressBook 'chrome'
 findAddressBook 'firefox'
