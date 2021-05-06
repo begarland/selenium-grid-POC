@@ -1,6 +1,6 @@
 Before do |scenario|
     # Initalize the Browser
-    @browser = Driver.create('chrome')
+    @browser = Driver.create(browser_name)
     # Resize browser                              
     @browser.window.resize_to(1750, 1000)
 end

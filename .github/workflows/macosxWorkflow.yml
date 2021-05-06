@@ -11,22 +11,18 @@ jobs:
         with:
           distribution: 'adopt' # See 'Supported distributions' for available options
           java-version: '11'
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
       - name: start up hub
         run: |
           cd $GITHUB_WORKSPACE/tests/scripts/
           bash start.sh &
       - name: run watir scripts
         run: | 
-          cd $GITHUB_WORKSPACE/tests/
-          gem install watir
-          gem install webdrivers
-          gem install faker
-          ruby watir\-example.rb
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+          cd $GITHUB_WORKSPACE/scripts/
+          bash runRuby.sh
       - name: run webdriver scripts
         run: | 
-          cd $GITHUB_WORKSPACE/tests/
-          npm install
-          node webdriver\-example.js
+          cd $GITHUB_WORKSPACE/scripts/
+          bash runNode.sh
