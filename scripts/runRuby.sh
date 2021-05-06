@@ -1,8 +1,11 @@
 #! /bin/bash
 
+cd $GITHUB_WORKSPACE/tests
+
 gem install watir
 gem install webdrivers
 gem install faker
+
 
 bundle install
 
