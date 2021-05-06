@@ -8,8 +8,8 @@ module Driver
 
       @driver = Watir::Browser.new browser.to_sym,
                                    url: 'http://localhost:4444/wd/hub', 
-                                   options: { args: args },
-                                   headless: true
+                                  #  options: { args: args },
+                                  #  headless: true
     end
 
     def self.get
