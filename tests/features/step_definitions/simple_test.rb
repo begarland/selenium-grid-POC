@@ -20,6 +20,7 @@ Then('I sign in') do
 end
 
 After do |scenario|
+    log(browser_name.to_s)
     log('done!')
     @browser.close
 
