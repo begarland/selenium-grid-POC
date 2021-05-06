@@ -9,6 +9,6 @@ gem install faker
 
 bundle install
 
-cucumber BROWSER=chrome &
-cucumber BROWSER=firefox &
-cucumber BROWSER=safari &
+bundle exec cucumber --publish BROWSER=chrome &
+bundle exec cucumber --publish BROWSER=firefox &
+bundle exec cucumber --publish BROWSER=safari &
