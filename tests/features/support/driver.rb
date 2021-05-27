@@ -13,10 +13,8 @@ module Driver
       end
 
       if browser.to_sym == :safari
-        opts = {prerun: {
-          'executable': 'https://gist.githubusercontent.com/begarland/ff0bcff468701afdf65181c3e1c974af/raw/af9c73ab3a82feb0a71e76c95eadb3cbb739c50f/disable_fraud_warning.sh',
-          'background': false
-        }
+        opts = {
+          safariIgnoreFraudWarning: true
       }
       end
 
