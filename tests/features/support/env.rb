@@ -1,4 +1,8 @@
+require 'selenium-webdriver'
+
 def browser_name
-    (ENV['BROWSER'] ||= ‘firefox’).downcase.to_sym
-  end
+    (ENV['BROWSER'] ||= 'chrome').downcase.to_sym
+end
   
+
+Selenium::WebDriver.logger.level = :debug
