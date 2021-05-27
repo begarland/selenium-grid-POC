@@ -1,7 +1,6 @@
 
 require 'watir'
 require 'webdrivers'
-require 'selenium'
 
 module Driver
     def self.create(browser)
