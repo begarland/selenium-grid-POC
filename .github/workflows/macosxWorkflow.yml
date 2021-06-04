@@ -32,9 +32,7 @@ jobs:
           bash processTestOutput.sh &
       - uses: actions/upload-artifact@v2
         with:
-          name: chrome-artifact
-          path: tests/artifacts/chrome_report.html
-      - uses: actions/upload-artifact@v2
-        with:
-          name: firefox-artifact
-          path: tests/artifacts/firefox_report.html
+          name: cucumber_reports.zip
+          path: |
+            tests/artifacts/chrome_report.html 
+            tests/artifacts/firefox_report.html
