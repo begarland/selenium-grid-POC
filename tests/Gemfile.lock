@@ -67,6 +67,7 @@ GEM
     ffi (1.15.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    json (2.5.1)
     loofah (2.9.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -106,6 +107,8 @@ GEM
       thor (~> 1.0)
     rake (12.3.3)
     regexp_parser (2.1.1)
+    report_builder (1.9)
+      json (>= 2.3.0)
     rexml (3.2.5)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
@@ -144,6 +147,7 @@ GEM
 
 PLATFORMS
   universal-darwin-20
+  x86_64-darwin-19
 
 DEPENDENCIES
   cucumber
@@ -152,6 +156,7 @@ DEPENDENCIES
   nokogiri
   parallel_tests (~> 2.29.1)
   rake (~> 12.3.2)
+  report_builder
   rspec (~> 3.8.0)
   selenium-webdriver (~> 4.0.0.alpha.2)
   watir

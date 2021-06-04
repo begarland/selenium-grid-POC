@@ -5,4 +5,4 @@ def browser_name
 end
   
 
-Selenium::WebDriver.logger.level = :debug
+# Selenium::WebDriver.logger.level = :debug
