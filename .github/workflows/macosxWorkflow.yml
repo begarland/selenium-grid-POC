@@ -30,3 +30,11 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE/scripts/
           bash processTestOutput.sh &
+      - uses: actions/upload-artifact@v2
+        with:
+          name: chrome-artifact
+          path: tests/artifacts/chrome_report.html
+      - uses: actions/upload-artifact@v2
+        with:
+          name: firefox-artifact
+          path: tests/artifacts/firefox_report.html
