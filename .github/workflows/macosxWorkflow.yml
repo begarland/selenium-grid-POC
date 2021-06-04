@@ -1,28 +1,29 @@
 name: MacOSx workflow
-on: 
+on:
   pull_request:
   workflow_dispatch:
-jobs: 
+jobs:
   run-job:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
+      - run: mkdir -p artifact/
       - uses: actions/setup-java@v2
         with:
-          distribution: 'adopt' # See 'Supported distributions' for available options
-          java-version: '11'
+          distribution: "adopt" # See 'Supported distributions' for available options
+          java-version: "11"
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: "14"
       - name: start up hub
         run: |
           cd $GITHUB_WORKSPACE/scripts/
           bash start.sh &
       - name: run watir scripts
-        run: | 
+        run: |
           cd $GITHUB_WORKSPACE/scripts/
           bash runRuby.sh
       - name: run webdriver scripts
-        run: | 
+        run: |
           cd $GITHUB_WORKSPACE/scripts/
           bash runNode.sh
