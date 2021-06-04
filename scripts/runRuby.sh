@@ -4,6 +4,8 @@ cd $GITHUB_WORKSPACE/tests
 
 bundle install 
 
-bundle exec cucumber --publish BROWSER=chrome 
-bundle exec cucumber --publish BROWSER=firefox 
-bundle exec cucumber --publish BROWSER=safari 
+chmod +x ./cucumber-json-formatter
+
+bundle exec cucumber --format message -o ./artifacts/chrome.ndjson BROWSER=chrome 
+bundle exec cucumber --format message -o ./artifacts/firefox.ndjson BROWSER=firefox 
+# bundle exec cucumber --format message -o ./artifacts/safari.ndjson BROWSER=safari  
