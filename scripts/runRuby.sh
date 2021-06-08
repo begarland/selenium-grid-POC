@@ -2,6 +2,8 @@
 
 cd $GITHUB_WORKSPACE/tests
 
+gem install bundler  
+
 bundle install 
 
 chmod +x ./scripts/cucumber-json-formatter
