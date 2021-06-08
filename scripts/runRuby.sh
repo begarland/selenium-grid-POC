@@ -2,7 +2,7 @@
 
 cd $GITHUB_WORKSPACE/tests
 
-gem install bundler  
+sudo gem install bundler -y
 
 bundle install 
 
