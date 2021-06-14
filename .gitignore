@@ -5,3 +5,4 @@
 selenium_example/.env
 tests/vendor/*
 tests/.bundle/
+tests/.env
