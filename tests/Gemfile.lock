@@ -154,7 +154,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   nokogiri
-  parallel_tests (~> 2.29.1)
+  parallel_tests
   rake (~> 12.3.2)
   report_builder
   rspec (~> 3.8.0)
