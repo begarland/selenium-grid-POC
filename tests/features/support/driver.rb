@@ -13,35 +13,12 @@ module Driver
           access_key: ENV['SAUCE_ACCESS_KEY'],
           name: 'simple_test',
           idle_timeout: 60,
-          tunnelIdentifier: 'test_tunnel'
+          tunnelIdentifier: 'test_tunnel',
+          extended_debugging: true,
+          capture_performance: true
         }
       }
 
-      if browser.to_sym == :firefox
-        opts = {
-          accept_insecure_certs: true, 
-          'sauce:options': {
-            username: ENV['SAUCE_USERNAME'],
-            access_key: ENV['SAUCE_ACCESS_KEY'],
-            name: 'simple_test',
-            idle_timeout: 60,
-            tunnelIdentifier: 'test_tunnel'
-          }
-        }
-      end
-
-      if browser.to_sym == :safari
-        opts = {
-          safariIgnoreFraudWarning: true,
-          'sauce:options': {
-            username: ENV['SAUCE_USERNAME'],
-            access_key: ENV['SAUCE_ACCESS_KEY'],
-            name: 'simple_test',
-            idle_timeout: 60,
-            tunnelIdentifier: 'test_tunnel'
-          }
-      }
-      end
 
       @driver = Watir::Browser.new browser.to_sym,
                                    url: 'https://ondemand.us-west-1.saucelabs.com:443/wd/hub',
