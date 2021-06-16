@@ -16,6 +16,7 @@ runs:
     - name: start sauce connect
       shell: bash
       run: |
+        cd $GITHUB_WORKSPACE/scripts/
         bin/sauceconnect_linux -c config.yml &
     - name: Sleep for 30s to wait for Sauce Connect ready
       shell: bash
