@@ -21,8 +21,7 @@ jobs:
             echo "api-key: ${{ secrets.SAUCE_ACCESS_KEY }}" >> config.yml
             echo "user: ${{ secrets.SAUCE_USERNAME }}" >> config.yml
             echo "tunnel-identifier: test-tunnel" >> config.yml
-            echo "auth: ['the-internet.herokuapp.com:80:admin:admin']" >> config.yml
-            cat config.yml
+            echo "auth: ['the-internet.herokuapp.com:80:${{ secrets.BASIC_AUTH}}']" >> config.yml
         - name: start sauce connect
           run: |
             cd $GITHUB_WORKSPACE/scripts/
