@@ -1,6 +1,6 @@
 Before do |scenario|
     # Initalize the Browser
-    @browser = Driver.create(browser_name)
+    @browser = Driver.create(host, browser_name)
     # Resize browser        
     Watir.default_timeout = 90        
     @browser.window.resize_to(1750, 1000)
