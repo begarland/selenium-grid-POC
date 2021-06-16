@@ -27,3 +27,15 @@ jobs:
             bash rubyBundleInstall.sh
         - name: build report
           uses: ./actions/build-cucumber-report@v1
+        - uses: actions/upload-artifact@v2
+          with:
+            name: cucumber_reports.zip
+            path: |
+              tests/artifacts/chrome_windows_report.html
+              tests/artifacts/chrome_mac_report.html
+              tests/artifacts/firefox_windows_report.html
+              tests/artifacts/firefox_mac_report.html
+              tests/artifacts/edge_windows_report.html
+              tests/artifacts/edge_mac_report.html
+              tests/artifacts/ie_windows_report.html
+              tests/artifacts/safari_mac_report.html
