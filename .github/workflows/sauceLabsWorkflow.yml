@@ -35,4 +35,3 @@ jobs:
           run: |
             cd $GITHUB_WORKSPACE/scripts/
             bash rubyBundleInstall.sh
-        # - name: Kill tunnel
