@@ -8,6 +8,16 @@ env:
   SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Action Test
+    steps:
+        # ...
+        - uses: saucelabs/sauce-connect-action@v1
+          with:
+              username: ${{ secrets.SAUCE_USERNAME }}
+              accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
+              tunnelIdentifier: test-tunnel
   cucumber:
     runs-on: ubuntu-latest
     steps:
