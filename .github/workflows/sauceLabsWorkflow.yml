@@ -28,9 +28,9 @@ jobs:
             cd $GITHUB_WORKSPACE/scripts/
             bin/sc -c config.yml &
         - name: Sleep for 30 seconds
-            uses: jakejarvis/wait-action@master
-            with:
-              time: '30s'
+          uses: jakejarvis/wait-action@master
+          with:
+            time: '30s'
         - name: Cucumber
           run: |
             cd $GITHUB_WORKSPACE/scripts/
