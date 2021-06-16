@@ -1,0 +1,22 @@
+name: 'sauce action@v1'
+description: 'set up and run actions'
+
+runs:
+  using: "composite"
+  steps:
+    - name: create config
+      run: |
+        cd $GITHUB_WORKSPACE/scripts/
+        cp config_template.yml config.yml
+        echo "api-key: ${{ secrets.SAUCE_ACCESS_KEY }}" >> config.yml
+        echo "user: ${{ secrets.SAUCE_USERNAME }}" >> config.yml
+        echo "tunnel-identifier: ${{ env.SAUCE_TUNNEL }}" >> config.yml
+        echo "auth: ['the-internet.herokuapp.com:80:${{ secrets.BASIC_AUTH}}']" >> config.yml
+    - name: start sauce connect
+      run: |
+        cd $GITHUB_WORKSPACE/scripts/
+        bin/sauceconnect_linux -c config.yml &
+    - name: Sleep for 30s to wait for Sauce Connect ready
+      run: |
+        sleep 30s
+        echo "//TODO: figure out how to do this by pinging SC"
