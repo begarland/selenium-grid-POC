@@ -18,6 +18,7 @@ jobs:
               username: ${{ secrets.SAUCE_USERNAME }}
               accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
               tunnelIdentifier: test-tunnel
+              sharedTunnel: true
         - name: Checkout
           uses: actions/checkout@v2
         - name: Cucumber
