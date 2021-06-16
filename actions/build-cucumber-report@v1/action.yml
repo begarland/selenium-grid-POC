@@ -1,0 +1,22 @@
+name: 'build-cucumber-report@v1'
+description: 'process and build cucumber reports'
+
+runs:
+  using: "composite"
+  steps:
+    - name: process cucumber report data data
+      run: |
+        cd $GITHUB_WORKSPACE/scripts/
+        bash processSauceTestOutput.sh 
+    - uses: actions/upload-artifact@v2
+      with:
+        name: cucumber_reports.zip
+        path: |
+          tests/artifacts/chrome_windows_report.html
+          tests/artifacts/chrome_mac_report.html
+          tests/artifacts/firefox_windows_report.html
+          tests/artifacts/firefox_mac_report.html
+          tests/artifacts/edge_windows_report.html
+          tests/artifacts/edge_mac_report.html
+          tests/artifacts/ie_windows_report.html
+          tests/artifacts/safari_mac_report.html

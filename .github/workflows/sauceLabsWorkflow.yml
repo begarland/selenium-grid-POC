@@ -9,34 +9,21 @@ env:
   HOST: saucelabs
   SAUCE_TUNNEL: 'test-tunnel'
   BASIC_AUTH: ${{ secrets.BASIC_AUTH }}
+  HOST_URL: 'the-internet.herokuapp.com'
 
 jobs:
   test:
     runs-on: ubuntu-latest
     name: Action Test
     steps:
-        - name: Checkout
+        - name: checkout repo
           uses: actions/checkout@v2
         - run: mkdir -p tests/artifacts/
         - name: start sauce connect 
           uses: ./actions/sauce-action@v1
-        - name: Cucumber
+        - name: run tests
           run: |
             cd $GITHUB_WORKSPACE/scripts/
             bash rubyBundleInstall.sh
-        - name: process ruby data
-          run: |
-            cd $GITHUB_WORKSPACE/scripts/
-            bash processSauceTestOutput.sh 
-        - uses: actions/upload-artifact@v2
-          with:
-            name: cucumber_reports.zip
-            path: |
-              tests/artifacts/chrome_windows_report.html
-              tests/artifacts/chrome_mac_report.html
-              tests/artifacts/firefox_windows_report.html
-              tests/artifacts/firefox_mac_report.html
-              tests/artifacts/edge_windows_report.html
-              tests/artifacts/edge_mac_report.html
-              tests/artifacts/ie_windows_report.html
-              tests/artifacts/safari_mac_report.html
+        - name: build report
+          uses: ./actions/build-cucumber-report@v1

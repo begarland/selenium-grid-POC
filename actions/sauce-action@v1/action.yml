@@ -1,4 +1,4 @@
-name: 'sauce action@v1'
+name: 'sauce-action@v1'
 description: 'set up and run actions'
 
 runs:
@@ -12,7 +12,7 @@ runs:
         echo "api-key: ${{ env.SAUCE_ACCESS_KEY }}" >> config.yml
         echo "user: ${{ env.SAUCE_USERNAME }}" >> config.yml
         echo "tunnel-identifier: ${{ env.SAUCE_TUNNEL }}" >> config.yml
-        echo "auth: ['the-internet.herokuapp.com:80:${{ env.BASIC_AUTH}}']" >> config.yml
+        echo "auth: ['${{ env.HOST_URL }}:80:${{ env.BASIC_AUTH}}']" >> config.yml
     - name: start sauce connect
       shell: bash
       run: |
