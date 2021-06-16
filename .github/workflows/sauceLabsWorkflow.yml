@@ -16,4 +16,5 @@ jobs:
       - name: Cucumber
         run: |
           cd tests
+          bundle install
           cucumber
