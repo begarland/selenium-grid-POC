@@ -28,7 +28,7 @@ jobs:
         - name: start sauce connect
           run: |
             cd $GITHUB_WORKSPACE/scripts/
-            bin/sc -c config.yml &
+            bin/sauceconnect_linux -c config.yml &
         - name: Sleep for 30s to wait for Sauce Connect ready
           run: |
             sleep 30s
