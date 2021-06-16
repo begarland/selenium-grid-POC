@@ -19,6 +19,7 @@ jobs:
               accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
               tunnelIdentifier: test-tunnel
               sharedTunnel: true
+              auth: the-internet.herokuapp.com:80:admin:admin
         - name: Checkout
           uses: actions/checkout@v2
         - name: Cucumber
