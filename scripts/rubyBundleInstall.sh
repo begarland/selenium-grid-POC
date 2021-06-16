@@ -18,3 +18,4 @@ bundle exec cucumber BROWSER=MicrosoftEdge PLATFORM='macOS 11' BROWSER_VERSION=l
 bundle exec cucumber BROWSER=internet_explorer PLATFORM='windows 10' BROWSER_VERSION=latest &
 bundle exec cucumber BROWSER=safari PLATFORM='macOS 11' BROWSER_VERSION=latest &
 
+wait
