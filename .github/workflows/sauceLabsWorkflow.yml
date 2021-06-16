@@ -1,4 +1,4 @@
-name: saucectl tests
+name: sauce labs tests
 
 on:
   pull_request:
@@ -15,6 +15,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Cucumber
         run: |
-          cd tests
-          bundle install
-          cucumber
+          cd $GITHUB_WORKSPACE/scripts/
+          bash rubyBundleInstall.sh
