@@ -13,7 +13,7 @@ module Driver
           access_key: ENV['SAUCE_ACCESS_KEY'],
           name: 'simple_test',
           idle_timeout: 60,
-          tunnelIdentifier: 'test_tunnel',
+          tunnelIdentifier: 'test-tunnel',
           extended_debugging: true,
           capture_performance: true
         }
