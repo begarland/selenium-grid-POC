@@ -20,7 +20,7 @@ jobs:
         - name: create config
           run: |
             cd $GITHUB_WORKSPACE/scripts/
-            cp config_empty.yml config.yml
+            cp config_template.yml config.yml
             echo "api-key: ${{ secrets.SAUCE_ACCESS_KEY }}" >> config.yml
             echo "user: ${{ secrets.SAUCE_USERNAME }}" >> config.yml
             echo "tunnel-identifier: ${{ env.SAUCE_TUNNEL }}" >> config.yml

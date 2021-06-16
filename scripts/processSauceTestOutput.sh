@@ -1,5 +1,7 @@
-
 cd $GITHUB_WORKSPACE/tests
+
+
+chmod +x ./cucumber-json-formatter
 
 # Process Messages
 
