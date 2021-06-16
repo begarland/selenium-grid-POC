@@ -6,10 +6,13 @@ require 'dotenv'
 Dotenv.load('.env')
 
 module Driver
-    def self.create(host, browser)
+    def self.create(host, browser, browser_version, platform)
       case host
       when :saucelabs
         opts = {
+          browser_name: browser,
+          browser_version: browser_version,
+          platform_name: platform,
           'sauce:options': {
             username: ENV['SAUCE_USERNAME'],
             access_key: ENV['SAUCE_ACCESS_KEY'],
