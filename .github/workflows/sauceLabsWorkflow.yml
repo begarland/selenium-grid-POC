@@ -18,12 +18,9 @@ jobs:
               username: ${{ secrets.SAUCE_USERNAME }}
               accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
               tunnelIdentifier: test-tunnel
-  cucumber:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Cucumber
-        run: |
-          cd $GITHUB_WORKSPACE/scripts/
-          bash rubyBundleInstall.sh
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: Cucumber
+          run: |
+            cd $GITHUB_WORKSPACE/scripts/
+            bash rubyBundleInstall.sh
