@@ -12,7 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     name: Action Test
     steps:
-        # ...
+        - name: create config
+          run: |
+            cd $GITHUB_WORKSPACE/scripts/
+            cp config_empty.yml config.yml
+            echo "api-key: ${{ secrets.SAUCE_ACCESS_KEY }}" >> config.yml
+            echo "user: ${{ secrets.SAUCE_USERNAME }}" >> config.yml
+            echo "tunnel-identifier: test-tunnel" >> config.yml
+            echo "auth: ['the-internet.herokuapp.com:80:admin:admin']" >> config.yml
+            cat config.yml
         - uses: saucelabs/sauce-connect-action@v1
           with:
               username: ${{ secrets.SAUCE_USERNAME }}

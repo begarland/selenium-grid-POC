@@ -22,9 +22,7 @@ scproxy-port: 0
 scproxy-read-limit: 0
 scproxy-write-limit: 0
 se-port: 0
-shared-tunnel: false
+shared-tunnel: true
 tunnel-domains: []
 verbose: 0
 vm-version: ""
-auth: ["the-internet.herokuapp.com", "80", "admin", "admin"]
-tunnel-identifier: "test-tunnel"
