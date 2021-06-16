@@ -29,10 +29,10 @@ jobs:
           run: |
             cd $GITHUB_WORKSPACE/scripts/
             bin/sc -c config.yml &
-        - name: Sleep for 30 seconds
-          uses: jakejarvis/wait-action@master
-          with:
-            time: '30s'
+        - name: Sleep for 30s to wait for Sauce Connect ready
+          run: |
+            sleep 30s
+            echo "//TODO: figure out how to do this by pinging SC"
         - name: Cucumber
           run: |
             cd $GITHUB_WORKSPACE/scripts/
