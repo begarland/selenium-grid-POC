@@ -4,10 +4,11 @@ on:
   pull_request:
 
 env:
-  SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
-  SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
+  SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+  SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
   HOST: saucelabs
   SAUCE_TUNNEL: 'test-tunnel'
+  BASIC_AUTH: ${{ secrets.BASIC_AUTH }}
 
 jobs:
   test:
@@ -23,10 +24,10 @@ jobs:
         #   run: |
         #     cd $GITHUB_WORKSPACE/scripts/
         #     cp config_template.yml config.yml
-        #     echo "api-key: ${{ secrets.SAUCE_ACCESS_KEY }}" >> config.yml
-        #     echo "user: ${{ secrets.SAUCE_USERNAME }}" >> config.yml
+        #     echo "api-key: ${{ env.SAUCE_ACCESS_KEY }}" >> config.yml
+        #     echo "user: ${{ env.SAUCE_USERNAME }}" >> config.yml
         #     echo "tunnel-identifier: ${{ env.SAUCE_TUNNEL }}" >> config.yml
-        #     echo "auth: ['the-internet.herokuapp.com:80:${{ secrets.BASIC_AUTH}}']" >> config.yml
+        #     echo "auth: ['the-internet.herokuapp.com:80:${{ env.BASIC_AUTH}}']" >> config.yml
         # - name: start sauce connect
         #   run: |
         #     cd $GITHUB_WORKSPACE/scripts/
