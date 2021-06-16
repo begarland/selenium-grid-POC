@@ -17,12 +17,11 @@ jobs:
           with:
               username: ${{ secrets.SAUCE_USERNAME }}
               accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
-              tunnelIdentifier: test-tunnel
-              sharedTunnel: true
-              auth: the-internet.herokuapp.com:80:admin:admin
+              configFile: $GITHUB_WORKSPACE/scripts/config.yml
         - name: Checkout
           uses: actions/checkout@v2
         - name: Cucumber
           run: |
             cd $GITHUB_WORKSPACE/scripts/
             bash rubyBundleInstall.sh
+        - name: Kill tunnel
