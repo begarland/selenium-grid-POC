@@ -1,3 +1,5 @@
+#! /bin/bash
+
 cd $GITHUB_WORKSPACE/tests
 
 chmod +x ./cucumber-json-formatter
