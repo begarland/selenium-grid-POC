@@ -5,3 +5,10 @@
 selenium_example/.env
 tests/vendor/*
 tests/.bundle/
+tests/.env
+scripts/config.yml
+scripts/.env
+scripts/sauce/prod-config.yml
+.gitignore
+scripts/sauce/qa-config.yml
+scripts/sauce/staging-config.yml

@@ -2,26 +2,38 @@
 require 'watir'
 require 'webdrivers'
 
+require 'dotenv'
+Dotenv.load('.env')
+
 module Driver
-    def self.create(browser)
-      opts = {}
-
-      if browser.to_sym == :firefox
+    def self.create(host, browser, browser_version, platform)
+      case host
+      when :saucelabs
         opts = {
-          accept_insecure_certs: true, 
+          browser_name: browser,
+          browser_version: browser_version,
+          platform_name: platform,
+          'sauce:options': {
+            username: ENV['SAUCE_USERNAME'],
+            access_key: ENV['SAUCE_ACCESS_KEY'],
+            name: 'simple_test',
+            idle_timeout: 60,
+            tunnelIdentifier: ENV['SAUCE_TUNNEL'],
+            extended_debugging: true,
+            capture_performance: true
+          }
         }
-      end
 
-      if browser.to_sym == :safari
-        opts = {
-          safariIgnoreFraudWarning: true
-      }
-      end
 
-      @driver = Watir::Browser.new browser.to_sym,
-                                   url: 'http://localhost:4444/wd/hub',
-                                   capabilities: opts
-                                  #  headless: true
+        @driver = Watir::Browser.new browser.to_sym,
+                                    url: 'https://ondemand.us-west-1.saucelabs.com:443/wd/hub',
+                                    capabilities: opts
+                                    #  headless: true
+
+      when :localhost
+        # uses google chrome by default
+        @driver = Watir::Browser.new browser.to_sym
+      end
     end
 
     def self.get

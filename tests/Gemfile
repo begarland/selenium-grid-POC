@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'rspec', '~>3.8.0'
 gem 'selenium-webdriver', '~>4.0.0.alpha.2'
-gem 'parallel_tests', '~>2.29.1'
 gem 'rake', '~>12.3.2'
 gem 'cucumber'
 gem 'watir'
@@ -12,3 +11,4 @@ gem 'webdrivers'
 gem 'faker'
 gem 'nokogiri'
 gem 'report_builder'
+gem 'parallel_tests', group: [:development, :test]

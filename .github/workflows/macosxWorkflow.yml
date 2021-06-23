@@ -1,6 +1,6 @@
 name: MacOSx workflow
 on:
-  pull_request:
+  # pull_request:
   workflow_dispatch:
 jobs:
   run-job:
@@ -30,7 +30,7 @@ jobs:
       - name: process ruby data
         run: |
           cd $GITHUB_WORKSPACE/scripts/
-          bash processTestOutput.sh &
+          bash processTestOutput.sh 
       - uses: actions/upload-artifact@v2
         with:
           name: cucumber_reports.zip

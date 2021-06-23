@@ -1,0 +1,3 @@
+test_tag: --tags @test_tag
+test_tag_with_retry: --tags @test_tag --retry 2
+test_tag_with_retry_and_publish: --tags @test_tag --retry 2 --publish

@@ -1,0 +1,11 @@
+name: 'build-cucumber-report@v1'
+description: 'process and build cucumber reports'
+
+runs:
+  using: "composite"
+  steps:
+    - name: process cucumber report data data
+      shell: bash
+      run: |
+        cd $GITHUB_WORKSPACE/scripts/
+        bash processSauceTestOutput.sh 
