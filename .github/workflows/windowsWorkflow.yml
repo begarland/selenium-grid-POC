@@ -26,7 +26,7 @@ jobs:
           cd scripts\
           java -version
           java -jar selenium-server-standalone.jar &
-          java -jar -Dwebdriver.ie.driver=.\drivers\IEDriverServer.exe -Dwebdriver.gecko.driver=.\drivers\geckodriver.exe -Dwebdriver.chrome.driver=.\drivers\chromedriver.exe selenium-server-standalone.jar -role node -nodeConfig node.json &
+          java -jar -Dwebdriver.ie.driver=.\drivers\IEDriver.exe -Dwebdriver.ie.driver.extractpath=.\drivers\IEDriver.exe -Dwebdriver.gecko.driver=.\drivers\geckodriver.exe -Dwebdriver.chrome.driver=.\drivers\chromedriver.exe selenium-server-standalone.jar -role node -nodeConfig node.json &
           cd ..
           cd tests\
           npm install
