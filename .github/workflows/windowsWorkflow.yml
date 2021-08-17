@@ -19,7 +19,7 @@ jobs:
         run: |
           dir
           pwd
-          set PATH=%PATH%;%CD%
+          set PATH=%PATH%;D:\a\selenium-grid-POC\selenium-grid-POC
       - name: start up hub and run tests
         run: |
           cd scripts\
