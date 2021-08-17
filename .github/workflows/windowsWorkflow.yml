@@ -26,10 +26,12 @@ jobs:
           java -jar -Dwebdriver.gecko.driver=.\drivers\geckodriver.exe -Dwebdriver.chrome.driver=.\drivers\chromedriver.exe selenium-server-standalone.jar -role node -nodeConfig node.json &
           Start-Sleep -s 15
           curl http://localhost:4444/wd/hub
+          curl http://www.google.com
           Write-Output 'plz work...'
 
       - name: run webdriver scripts
         run: |
+          curl http://www.google.com
           curl http://localhost:4444/wd/hub
           curl http://127.0.0.1:4444/wd/hub
           cd tests\
