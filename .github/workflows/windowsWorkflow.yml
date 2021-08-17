@@ -18,9 +18,9 @@ jobs:
       - name: start up hub
         run: |
           dir
-          cd $GITHUB_WORKSPACE\\scripts\
+          cd scripts\
           bash start.sh &
       - name: run webdriver scripts
         run: |
-          cd $GITHUB_WORKSPACE\\scripts\
+          cd scripts\
           bash runNode.sh
