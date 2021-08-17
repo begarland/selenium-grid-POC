@@ -17,6 +17,7 @@ jobs:
           node-version: "14"
       - name: start up hub
         run: |
+          dir
           cd $GITHUB_WORKSPACE\scripts\
           bash start.sh &
       - name: run webdriver scripts
