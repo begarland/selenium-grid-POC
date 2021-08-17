@@ -5,4 +5,4 @@ const { findGoogle } = tests
 
 findGoogle('chrome')
 findGoogle('firefox')
-// findGoogle('internet explorer')
+findGoogle('internet explorer')
