@@ -17,7 +17,7 @@ jobs:
           node-version: "14"
       - name: set ie in path
         run: |
-          set PATH=%PATH%; .\
+          set PATH=%PATH%;%cd%
       - name: start up hub and run tests
         run: |
           dir
