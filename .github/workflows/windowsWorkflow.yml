@@ -19,8 +19,8 @@ jobs:
         run: |
           dir
           cd scripts\
-          bash windows_start.sh &
+          .\windows_start.sh &
       - name: run webdriver scripts
         run: |
           cd scripts\
-          bash runNode.sh
+          .\runNode.sh
