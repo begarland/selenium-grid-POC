@@ -17,7 +17,7 @@ jobs:
           node-version: "14"
       - name: set ie in path
         run: |
-          echo cd | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          echo %CD% | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
       - name: start up hub and run tests
         run: |
           cd scripts\
