@@ -17,10 +17,11 @@ jobs:
           node-version: "14"
       - name: set ie in path
         run: |
+          dir
+          pwd
           set PATH=%PATH%;%CD%
       - name: start up hub and run tests
         run: |
-          dir
           cd scripts\
           java -version
           java -jar selenium-server-standalone.jar &
