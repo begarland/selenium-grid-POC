@@ -20,6 +20,9 @@ jobs:
           dir
           cd scripts\
           .\windows_start.sh &
+          curl http://localhost:4444/wd/hub
+          Write-Output 'plz work...'
+
       - name: run webdriver scripts
         run: |
           cd scripts\
