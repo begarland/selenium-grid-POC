@@ -1,4 +1,4 @@
-const tests = require('webdriver-example.js')
+const tests = require('./webdriver-example')
 
 const { findGoogle } = tests
 
