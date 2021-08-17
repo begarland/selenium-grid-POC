@@ -18,7 +18,7 @@ jobs:
       - name: set ie in path
         run: |
           dir
-          pwd
+          cd
           set PATH=%PATH%;D:\a\selenium-grid-POC\selenium-grid-POC
       - name: start up hub and run tests
         run: |
