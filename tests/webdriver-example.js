@@ -2,7 +2,7 @@ const webdriver = require("selenium-webdriver");
 
 console.log('attempting to run...')
 
-export function findGoogle(browser = "chrome") {
+function findGoogle(browser = "chrome") {
   const driver = new webdriver.Builder() //Creating a driver
     .forBrowser(browser)
     .usingServer("http://localhost:4444/wd/hub") //Register the hub
@@ -24,3 +24,8 @@ export function findGoogle(browser = "chrome") {
 findGoogle("firefox");
 findGoogle("chrome");
 findGoogle("safari");
+
+
+module.exports = {
+  findGoogle
+}
