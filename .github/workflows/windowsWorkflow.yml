@@ -17,16 +17,13 @@ jobs:
           node-version: "14"
       - name: set ie in path
         run: |
-          echo "C:\directory\to\add\to\path" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
-          # dir
-          # cd
-          # set PATH=%PATH%;D:\a\selenium-grid-POC\selenium-grid-POC
+          echo cd | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
       - name: start up hub and run tests
         run: |
           cd scripts\
           java -version
           java -jar selenium-server-standalone.jar &
-          java -jar -Dwebdriver.ie.driver=IEDriver.exe -Dwebdriver.gecko.driver=geckodriver.exe -Dwebdriver.chrome.driver=chromedriver.exe selenium-server-standalone.jar -role node -nodeConfig node.json &
+          java -jar -Dwebdriver.ie.driver=./driver/IEDriver.exe -Dwebdriver.gecko.driver=./driver/geckodriver.exe -Dwebdriver.chrome.driver=./driver/chromedriver.exe selenium-server-standalone.jar -role node -nodeConfig node.json &
           cd ..
           cd tests\
           npm install
