@@ -13,7 +13,8 @@ function findGoogle(browser = "chrome") {
     .then(() => driver.findElement(webdriver.By.name("q")).sendKeys("hello\n"))
     // .then(() => driver.findElement(webdriver.By.name("this-should-not-exist")))
     .catch((err) => {
-      console.log(err);
+      console.log(err)
+      throw Error(err)
     })
     .finally(() => {
       console.log(`${browser} is done!`);
