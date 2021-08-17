@@ -23,4 +23,5 @@ jobs:
       - name: run webdriver scripts
         run: |
           cd scripts\
+          Write-Output 'plz work...'
           .\runNode.sh
