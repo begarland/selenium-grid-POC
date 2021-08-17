@@ -1,4 +1,6 @@
-import { findGoogle } from "./webdriver-example";
+const tests = require('webdriver-example.js')
+
+const { findGoogle } = tests
 
 
 findGoogle('chrome')
