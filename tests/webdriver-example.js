@@ -21,11 +21,6 @@ function findGoogle(browser = "chrome") {
     }); //Quit the driver
 }
 
-findGoogle("firefox");
-findGoogle("chrome");
-findGoogle("safari");
-
-
 module.exports = {
   findGoogle
 }
