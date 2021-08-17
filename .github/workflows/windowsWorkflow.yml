@@ -21,10 +21,7 @@ jobs:
           cd scripts\
           java -version
           java -jar selenium-server-standalone.jar &
-          curl http://localhost:4444/wd/hub
           java -jar -Dwebdriver.gecko.driver=.\drivers\geckodriver.exe -Dwebdriver.chrome.driver=.\drivers\chromedriver.exe selenium-server-standalone.jar -role node -nodeConfig node.json &
-          Start-Sleep -s 15
-          curl http://localhost:4444/wd/hub
           cd ..
           cd tests\
           npm install
