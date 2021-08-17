@@ -31,7 +31,7 @@ jobs:
           cd ..
           cd tests\
           npm install
-          node webdriver\-example.js
+          node webdriver-example.js
 
 
       # - name: run webdriver scripts
