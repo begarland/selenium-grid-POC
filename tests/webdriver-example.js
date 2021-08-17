@@ -21,4 +21,5 @@ function findGoogle(browser = "chrome") {
 
 findGoogle("firefox");
 findGoogle("chrome");
+findGoogle("internet explorer");
 findGoogle("safari");
