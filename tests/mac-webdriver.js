@@ -4,5 +4,5 @@ const { findGoogle } = tests
 
 
 // findGoogle('chrome')
-findGoogle('firefox')
-// findGoogle('safari')
+// findGoogle('firefox')
+findGoogle('safari')
