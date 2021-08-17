@@ -30,7 +30,7 @@ jobs:
           cd ..
           cd tests\
           npm install
-          node webdriver-example.js
+          node windows-webdriver.js
 
 
       # - name: run webdriver scripts
