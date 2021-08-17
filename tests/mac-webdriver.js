@@ -3,6 +3,6 @@ const tests = require('./webdriver-example')
 const { findGoogle } = tests
 
 
-findGoogle('chrome')
+// findGoogle('chrome')
 findGoogle('firefox')
-findGoogle('safari')
+// findGoogle('safari')
