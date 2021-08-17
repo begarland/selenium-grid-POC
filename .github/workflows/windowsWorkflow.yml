@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
-      - name: start up hub
+      - name: start up hub and run tests
         run: |
           dir
           cd scripts\
@@ -28,12 +28,15 @@ jobs:
           curl http://localhost:4444/wd/hub
           curl http://www.google.com
           Write-Output 'plz work...'
-
-      - name: run webdriver scripts
-        run: |
-          curl http://www.google.com
-          curl http://localhost:4444/wd/hub
-          curl http://127.0.0.1:4444/wd/hub
+          cd ..
           cd tests\
           npm install
           node webdriver\-example.js
+
+
+      # - name: run webdriver scripts
+      #   run: |
+      #     curl http://www.google.com
+      #     curl http://localhost:4444/wd/hub
+      #     curl http://127.0.0.1:4444/wd/hub
+          
