@@ -7,7 +7,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - run: mkdir -p tests/artifacts/
+      - run: mkdir -p tests\artifacts\
       - uses: actions/setup-java@v2
         with:
           distribution: "adopt" # See 'Supported distributions' for available options
@@ -17,9 +17,9 @@ jobs:
           node-version: "14"
       - name: start up hub
         run: |
-          cd $GITHUB_WORKSPACE/scripts/
+          cd $GITHUB_WORKSPACE\scripts\
           bash start.sh &
       - name: run webdriver scripts
         run: |
-          cd $GITHUB_WORKSPACE/scripts/
+          cd $GITHUB_WORKSPACE\scripts\
           bash runNode.sh
