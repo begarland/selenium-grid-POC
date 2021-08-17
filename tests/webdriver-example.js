@@ -1,5 +1,7 @@
 const webdriver = require("selenium-webdriver");
 
+console.log('attempting to run...')
+
 function findGoogle(browser = "chrome") {
   const driver = new webdriver.Builder() //Creating a driver
     .forBrowser(browser)
