@@ -17,7 +17,7 @@ function findGoogle(browser = 'chrome') {
       .usingServer('http://localhost:4444/wd/hub') //Register the hub
       .build();
   } else {
-    driver = await env.builder().setIeOptions(options).build();
+    driver = env.builder().setIeOptions(options).build();
   }
 
   console.log('weve created the driver', browser);
