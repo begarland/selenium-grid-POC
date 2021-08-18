@@ -8,6 +8,8 @@ function findGoogle(browser = 'chrome') {
     .usingServer('http://localhost:4444/wd/hub') //Register the hub
     .build();
 
+  console.log('weve created the driver', driver);
+
   driver
     .get('http://www.google.com') //Opening Google.com
     .then(() => driver.findElement(webdriver.By.name('q')).sendKeys('hello\n'))

@@ -1,8 +1,7 @@
-const tests = require('./webdriver-example')
+const tests = require('./webdriver-example');
 
-const { findGoogle } = tests
+const { findGoogle } = tests;
 
-
-findGoogle('chrome')
-findGoogle('firefox')
-// findGoogle('internet explorer')
+findGoogle('chrome');
+findGoogle('firefox');
+findGoogle('internet explorer');
