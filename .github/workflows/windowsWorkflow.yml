@@ -17,7 +17,6 @@ jobs:
           node-version: '14'
       - name: start up hub
         run: |
-          dir
           cd tests\
           npm install
           npx selenium-standalone install

@@ -20,21 +20,7 @@ jobs:
           cd $GITHUB_WORKSPACE/tests/
           npm install
           npx selenium-standalone install && npx selenium-standalone start &
-      # - name: run watir scripts
-      #   run: |
-      #     cd $GITHUB_WORKSPACE/scripts/
-      #     bash runRuby.sh
       - name: run webdriver scripts
         run: |
           cd $GITHUB_WORKSPACE/scripts/
           bash runNode.sh
-      # - name: process ruby data
-      #   run: |
-      #     cd $GITHUB_WORKSPACE/scripts/
-      #     bash processTestOutput.sh &
-      # - uses: actions/upload-artifact@v2
-      #   with:
-      #     name: cucumber_reports.zip
-      #     path: |
-      #       tests/artifacts/chrome_report.html
-      #       tests/artifacts/firefox_report.html
