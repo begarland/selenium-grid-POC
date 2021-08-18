@@ -22,6 +22,7 @@
     {
       "browserName": "internet explorer",
       "maxInstances": 1,
+      "platform": "WINDOWS",
       "seleniumProtocol": "WebDriver"
     }
   ],
