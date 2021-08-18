@@ -10,11 +10,11 @@ jobs:
       - run: mkdir -p tests\artifacts\
       - uses: actions/setup-java@v2
         with:
-          distribution: "adopt" # See 'Supported distributions' for available options
-          java-version: "11"
+          distribution: 'adopt' # See 'Supported distributions' for available options
+          java-version: '11'
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: '14'
       - name: start up hub and run tests
         run: |
           dir
@@ -30,10 +30,8 @@ jobs:
           npm install
           node windows-webdriver.js
 
-
       # - name: run webdriver scripts
       #   run: |
       #     curl http://www.google.com
       #     curl http://localhost:4444/wd/hub
       #     curl http://127.0.0.1:4444/wd/hub
-          
