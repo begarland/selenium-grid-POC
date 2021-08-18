@@ -26,7 +26,9 @@ function findGoogle(browser = 'chrome') {
         driver.quit();
       }); //Quit the driver
   } else {
-    driver.quit();
+    setTimeout(() => {
+      driver.quit();
+    }, 100);
   }
 }
 
