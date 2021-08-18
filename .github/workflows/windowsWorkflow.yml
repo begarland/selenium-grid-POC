@@ -25,9 +25,3 @@ jobs:
           Start-Sleep -s 60
           curl http://localhost:4444/wd/hub
           node windows-webdriver.js
-
-      # - name: run webdriver scripts
-      #   run: |
-      #     curl http://www.google.com
-      #     curl http://localhost:4444/wd/hub
-      #     curl http://127.0.0.1:4444/wd/hub
