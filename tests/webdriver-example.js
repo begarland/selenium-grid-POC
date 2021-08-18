@@ -4,6 +4,9 @@ console.log('attempting to run...')
 
 function findGoogle(browser = "chrome") {
   console.log('the browser is', browser)
+  if (browser == 'internet explorer') {
+    console.log('hello, this will break')
+  }
   const driver = new webdriver.Builder() //Creating a driver
     .forBrowser(browser)
     .usingServer("http://localhost:4444/wd/hub") //Register the hub
