@@ -5,6 +5,7 @@ let options = new ie.Options();
 options.addBrowserCommandSwitches('-k');
 options.addBrowserCommandSwitches('-private');
 options.forceCreateProcessApi(true);
+options.ignoreZoomSetting(true);
 
 console.log('attempting to run...');
 
