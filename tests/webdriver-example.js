@@ -16,16 +16,13 @@ function findGoogle(browser = 'chrome') {
       .get('http://www.google.com') //Opening Google.com
       .then(() => {
         driver.findElement(webdriver.By.name('q')).sendKeys('hello\n');
-        console.log(`${browser} has searched!`);
       })
       // .then(() => driver.findElement(webdriver.By.name("this-should-not-exist")))
       .catch((err) => {
         // console.log(err)
-        console.log(`${browser} has errored!`);
         throw Error(err);
       })
       .finally(() => {
-        console.log(`${browser} is done!`);
         driver.quit();
       }); //Quit the driver
   } else {
