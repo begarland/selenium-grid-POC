@@ -14,11 +14,14 @@ function findGoogle(browser = "chrome") {
 
   driver
     .get("http://www.google.com") //Opening Google.com
-    .then(() => driver.findElement(webdriver.By.name("q")).sendKeys("hello\n"))
+    .then(() => {driver.findElement(webdriver.By.name("q")).sendKeys("hello\n");       console.log(`${browser} has searched!`);
+  })
     // .then(() => driver.findElement(webdriver.By.name("this-should-not-exist")))
     .catch((err) => {
       // console.log(err)
       throw Error(err)
+      console.log(`${browser} has errored!`);
+
     })
     .finally(() => {
       console.log(`${browser} is done!`);
