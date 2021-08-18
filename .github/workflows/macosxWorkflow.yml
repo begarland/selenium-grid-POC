@@ -10,15 +10,16 @@ jobs:
       - run: mkdir -p tests/artifacts/
       - uses: actions/setup-java@v2
         with:
-          distribution: "adopt" # See 'Supported distributions' for available options
-          java-version: "11"
+          distribution: 'adopt' # See 'Supported distributions' for available options
+          java-version: '11'
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: '14'
       - name: start up hub
         run: |
-          cd $GITHUB_WORKSPACE/scripts/
-          bash start.sh &
+          cd $GITHUB_WORKSPACE/tests/
+          npm install
+          npx selenium-standalone install && npx selenium-standalone start &
       # - name: run watir scripts
       #   run: |
       #     cd $GITHUB_WORKSPACE/scripts/
@@ -35,5 +36,5 @@ jobs:
       #   with:
       #     name: cucumber_reports.zip
       #     path: |
-      #       tests/artifacts/chrome_report.html 
+      #       tests/artifacts/chrome_report.html
       #       tests/artifacts/firefox_report.html
