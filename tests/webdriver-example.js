@@ -1,17 +1,17 @@
-const webdriver = require("selenium-webdriver");
+const webdriver = require('selenium-webdriver');
 
-console.log('attempting to run...')
+console.log('attempting to run...');
 
-function findGoogle(browser = "chrome") {
+function findGoogle(browser = 'chrome') {
   const driver = new webdriver.Builder() //Creating a driver
     .forBrowser(browser)
-    .usingServer("http://localhost:4444/wd/hub") //Register the hub
+    .usingServer('http://localhost:4444/wd/hub') //Register the hub
     .build();
 
   driver
-    .get("http://www.google.com") //Opening Google.com
-    .then(() => driver.findElement(webdriver.By.name("q")).sendKeys("hello\n"))
-    // .then(() => driver.findElement(webdriver.By.name("this-should-not-exist")))
+    .get('http://www.google.com') //Opening Google.com
+    .then(() => driver.findElement(webdriver.By.name('q')).sendKeys('hello\n'))
+    .then(() => driver.findElement(webdriver.By.name('this-should-not-exist')))
     .catch((err) => {
       console.log(err);
     })
@@ -22,5 +22,5 @@ function findGoogle(browser = "chrome") {
 }
 
 module.exports = {
-  findGoogle
-}
+  findGoogle,
+};
