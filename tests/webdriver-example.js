@@ -11,7 +11,9 @@ function findGoogle(browser = "chrome") {
     .forBrowser(browser)
     .usingServer("http://localhost:4444/wd/hub") //Register the hub
     .build();
-
+    if (browser == 'internet explorer') {
+      console.log('we made it past teh driver, this will break')
+    }
   driver
     .get("http://www.google.com") //Opening Google.com
     .then(() => {driver.findElement(webdriver.By.name("q")).sendKeys("hello\n");       console.log(`${browser} has searched!`);
