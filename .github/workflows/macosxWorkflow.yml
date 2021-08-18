@@ -19,7 +19,8 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE/tests/
           npm install
-          npx selenium-standalone install && npx selenium-standalone start &
+          npx selenium-standalone install
+          npx selenium-standalone start &
       - name: run webdriver scripts
         run: |
           cd $GITHUB_WORKSPACE/scripts/
