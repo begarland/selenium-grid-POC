@@ -3,10 +3,19 @@ const webdriver = require('selenium-webdriver');
 console.log('attempting to run...');
 
 function findGoogle(browser = 'chrome') {
-  const driver = new webdriver.Builder() //Creating a driver
-    .forBrowser(browser)
-    .usingServer('http://localhost:4444/wd/hub') //Register the hub
-    .build();
+  let driver;
+
+  if (browser !== 'internet_explorer') {
+    driver = new webdriver.Builder() //Creating a driver
+      .forBrowser(browser)
+      .usingServer('http://localhost:4444/wd/hub') //Register the hub
+      .build();
+  } else {
+    driver = new webdriver.Builder() //Creating a driver
+      .forBrowser(browser, '8', 'WINDOWS')
+      .usingServer('http://localhost:4444/wd/hub') //Register the hub
+      .build();
+  }
 
   console.log('weve created the driver', browser);
 
