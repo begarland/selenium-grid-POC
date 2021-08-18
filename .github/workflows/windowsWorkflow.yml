@@ -22,7 +22,7 @@ jobs:
         run: |
           cd scripts\
           java -version
-          
+          cd
           java -jar selenium-server-standalone.jar &
           java -jar -Dwebdriver.ie.driver=.\driver\IEDriverServer.exe -Dwebdriver.gecko.driver=.\driver\geckodriver.exe -Dwebdriver.chrome.driver=.\driver\chromedriver.exe selenium-server-standalone.jar -role node -nodeConfig node.json &
           cd ..
