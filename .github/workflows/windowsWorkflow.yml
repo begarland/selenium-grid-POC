@@ -22,7 +22,7 @@ jobs:
           cd ..
           cd tests\
           npm install
-          npx selenium-standalone install && npx selenium-standalone start
+          npx selenium-standalone install && npx selenium-standalone start &
           curl http://localhost:4444/wd/hub
           node windows-webdriver.js
 
