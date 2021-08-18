@@ -22,8 +22,7 @@
       "browserName": "internet explorer",
       "platform": "WINDOWS",
       "maxInstances": 2,
-      "seleniumProtocol": "WebDriver",
-      "browserVersion": 11
+      "seleniumProtocol": "WebDriver"
     }
   ],
   "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
