@@ -21,7 +21,7 @@ jobs:
           cd tests\
           npm install
           npx selenium-standalone install
-          Start-Process (npx selenium-standalone start)
+          npx selenium-standalone start;
           Start-Sleep -s 10
           curl http://localhost:4444/wd/hub
           node windows-webdriver.js
