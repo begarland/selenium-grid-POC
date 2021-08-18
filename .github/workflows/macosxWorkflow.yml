@@ -12,28 +12,28 @@ jobs:
         with:
           distribution: "adopt" # See 'Supported distributions' for available options
           java-version: "11"
-      # - uses: actions/setup-node@v2
-      #   with:
-      #     node-version: "14"
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
       - name: start up hub
         run: |
           cd $GITHUB_WORKSPACE/scripts/
           bash start.sh &
-      - name: run watir scripts
-        run: |
-          cd $GITHUB_WORKSPACE/scripts/
-          bash runRuby.sh
-      # - name: run webdriver scripts
+      # - name: run watir scripts
       #   run: |
       #     cd $GITHUB_WORKSPACE/scripts/
-      #     bash runNode.sh
-      - name: process ruby data
+      #     bash runRuby.sh
+      - name: run webdriver scripts
         run: |
           cd $GITHUB_WORKSPACE/scripts/
-          bash processTestOutput.sh &
-      - uses: actions/upload-artifact@v2
-        with:
-          name: cucumber_reports.zip
-          path: |
-            tests/artifacts/chrome_report.html 
-            tests/artifacts/firefox_report.html
+          bash runNode.sh
+      # - name: process ruby data
+      #   run: |
+      #     cd $GITHUB_WORKSPACE/scripts/
+      #     bash processTestOutput.sh &
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: cucumber_reports.zip
+      #     path: |
+      #       tests/artifacts/chrome_report.html 
+      #       tests/artifacts/firefox_report.html

@@ -1,24 +1,33 @@
-const webdriver = require("selenium-webdriver");
+const webdriver = require('selenium-webdriver');
+const { Platform } = require('selenium-webdriver/lib/capabilities');
 
-function findGoogle(browser = "chrome") {
+console.log('attempting to run...');
+
+function findGoogle(browser = 'chrome', version, platform = Platform.MAC) {
+  console.log('the browser is', browser);
+  if (browser == 'internet explorer') {
+    console.log('hello, this will break');
+  }
   const driver = new webdriver.Builder() //Creating a driver
-    .forBrowser(browser)
-    .usingServer("http://localhost:4444/wd/hub") //Register the hub
+    .forBrowser(browser, version, platform)
+    .usingServer('http://localhost:4444/wd/hub') //Register the hub
     .build();
 
   driver
-    .get("http://www.google.com") //Opening Google.com
-    .then(() => driver.findElement(webdriver.By.name("q")).sendKeys("hello\n"))
+    .get('http://www.google.com') //Opening Google.com
+    .then(() => {
+      driver.findElement(webdriver.By.name('q')).sendKeys('hello\n');
+    })
     // .then(() => driver.findElement(webdriver.By.name("this-should-not-exist")))
     .catch((err) => {
-      console.log(err);
+      // console.log(err)
+      throw Error(err);
     })
     .finally(() => {
-      console.log(`${browser} is done!`);
       driver.quit();
     }); //Quit the driver
 }
 
-findGoogle("firefox");
-findGoogle("chrome");
-findGoogle("safari");
+module.exports = {
+  findGoogle,
+};
