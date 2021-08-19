@@ -67,9 +67,8 @@ exports.config = {
       browserName: 'firefox',
     },
     {
-      maxInstances: 5,
+      maxInstances: 1,
       browserName: 'internet explorer',
-      acceptInsecureCerts: true,
       timeouts: { implicit: 0, pageLoad: 600000, script: 60000 },
     },
   ],
