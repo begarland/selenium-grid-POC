@@ -69,7 +69,7 @@ exports.config = {
     {
       maxInstances: 1,
       browserName: 'internet explorer',
-      timeouts: { implicit: 0, pageLoad: 600000, script: 60000 },
+      timeouts: { implicit: 30000, pageLoad: 600000, script: 60000 },
       pageLoadStrategy: 'eager',
     },
   ],
