@@ -1,4 +1,5 @@
 exports.config = {
+  path: '/wd/hub',
   //
   // ====================
   // Runner Configuration
