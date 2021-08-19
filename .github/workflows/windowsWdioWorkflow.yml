@@ -13,5 +13,7 @@ jobs:
           node-version: '14'
       - name: start up hub
         run: |
-          cd cucumberJs
+          cd cucumberJS\
+          dir
+          npm install
           npx wdio run windows_wdio.conf.js
