@@ -1,0 +1,17 @@
+name: MacOSx wdio workflow
+on:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  run-job:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: mkdir -p tests/artifacts/
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: run webdriver scripts
+        run: |
+          cd $GITHUB_WORKSPACE/cucumberJS/
+          npx wdio run mac_wdio.conf.js
