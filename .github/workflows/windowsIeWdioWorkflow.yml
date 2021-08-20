@@ -1,4 +1,4 @@
-name: Windows without ie wdio workflow
+name: Windows with only ie wdio workflow
 on:
   pull_request:
   workflow_dispatch:
@@ -16,4 +16,4 @@ jobs:
           cd cucumberJS\
           dir
           npm install
-          npx wdio run windows_without_ie_wdio.conf.js
+          npx wdio run windows_with_only_ie_wdio.conf.js
