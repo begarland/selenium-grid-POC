@@ -1,6 +1,5 @@
 {
-  "capabilities":
-  [
+  "capabilities": [
     {
       "browserName": "firefox",
       "marionette": true,
@@ -16,7 +15,13 @@
       "browserName": "safari",
       "technologyPreview": false,
       "platform": "MAC",
-      "maxInstances": 1,
+      "maxInstances": 2,
+      "seleniumProtocol": "WebDriver"
+    },
+    {
+      "browserName": "internet explorer",
+      "platformName": "WINDOWS",
+      "maxInstances": 2,
       "seleniumProtocol": "WebDriver"
     }
   ],
@@ -32,7 +37,7 @@
   "unregisterIfStillDownAfter": 60000,
   "downPollingLimit": 2,
   "debug": false,
-  "servlets" : [],
+  "servlets": [],
   "withoutServlets": [],
   "custom": {}
 }

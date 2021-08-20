@@ -1,15 +1,32 @@
-const webdriver = require("selenium-webdriver");
+const webdriver = require('selenium-webdriver');
+const ie = require('selenium-webdriver/ie');
 
-function findGoogle(browser = "chrome") {
-  const driver = new webdriver.Builder() //Creating a driver
-    .forBrowser(browser)
-    .usingServer("http://localhost:4444/wd/hub") //Register the hub
-    .build();
+let options = new ie.Options();
+options.addBrowserCommandSwitches('-k');
+options.addBrowserCommandSwitches('-private');
+options.forceCreateProcessApi(true);
+options.ignoreZoomSetting(true);
+
+console.log('attempting to run...');
+
+function findGoogle(browser = 'chrome') {
+  let driver;
+
+  if (browser !== 'internet_explorer') {
+    driver = new webdriver.Builder() //Creating a driver
+      .forBrowser(browser)
+      .usingServer('http://localhost:4444/wd/hub') //Register the hub
+      .build();
+  } else {
+    driver = env.builder().setIeOptions(options).build();
+  }
+
+  console.log('weve created the driver', browser);
 
   driver
-    .get("http://www.google.com") //Opening Google.com
-    .then(() => driver.findElement(webdriver.By.name("q")).sendKeys("hello\n"))
-    // .then(() => driver.findElement(webdriver.By.name("this-should-not-exist")))
+    .get('http://www.google.com') //Opening Google.com
+    .then(() => driver.findElement(webdriver.By.name('q')).sendKeys('hello\n'))
+    // .then(() => driver.findElement(webdriver.By.name('this-should-not-exist')))
     .catch((err) => {
       console.log(err);
     })
@@ -19,6 +36,6 @@ function findGoogle(browser = "chrome") {
     }); //Quit the driver
 }
 
-findGoogle("firefox");
-findGoogle("chrome");
-findGoogle("safari");
+module.exports = {
+  findGoogle,
+};
